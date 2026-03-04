@@ -9,7 +9,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 8080
 
 // Make sure this exists in your .env file
 // OPENAI_API_KEY=sk-xxxxx
