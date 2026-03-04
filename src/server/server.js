@@ -27,7 +27,7 @@ const client = new OpenAI({
 })
 
 // Optional: change model if you want
-const MODEL = "gpt-5.2-mini"
+const MODEL = "gpt-5-mini"
 
 // ------------------------------
 // Test Route
