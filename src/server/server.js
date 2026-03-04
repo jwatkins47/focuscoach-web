@@ -2,13 +2,17 @@ import express from "express"
 import dotenv from "dotenv"
 import OpenAI from "openai"
 import cors from "cors"
-
+import path from "path"
+import { fileURLToPath } from "url"
 dotenv.config()
 
 const app = express()
 app.use(cors())
 app.use(express.json())
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
+app.use(express.static(path.join(__dirname, "../../dist")))
 const PORT = process.env.PORT || 8080
 
 // Make sure this exists in your .env file
@@ -23,7 +27,7 @@ const client = new OpenAI({
 })
 
 // Optional: change model if you want
-const MODEL = "gpt-4.1-mini"
+const MODEL = "gpt-5.2-mini"
 
 // ------------------------------
 // Test Route
